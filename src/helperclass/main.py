@@ -11,12 +11,12 @@ import coloredlogs
 import dotenv
 
 
-async def check_if_existed_env() -> bool:
+async def check_if_existed_env(path) -> bool:
     """
     Check if .env file exists.
     :return: True if .env file exists, False if not.
     """
-    return os.path.exists(os.path.join(os.path.dirname(__file__), '.env'))
+    return os.path.exists(path, '.env'))
 
 
 class Helper:
@@ -59,13 +59,13 @@ class Helper:
                 self.logger.addHandler(handler_stream)
                 self.logger.addHandler(handler_file)
 
-    async def load_env(self) -> bool:
+    async def load_env(self, path) -> bool:
         """
         Load the .env file.
         :return: True if the .env file is loaded, False otherwise
         """
-        if await check_if_existed_env():
-            dotenv.load_dotenv(dotenv_path=os.path.join(os.path.dirname(__file__), '.env'))
+        if await check_if_existed_env(path):
+            dotenv.load_dotenv(path, '.env'))
             self.logger.debug(".env file loaded")
             return True
         self.logger.critical(".env file not found")
