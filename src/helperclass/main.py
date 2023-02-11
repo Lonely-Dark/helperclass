@@ -66,7 +66,7 @@ class Helper:
         :return: True if the .env file is loaded, False otherwise
         """
         if await check_if_existed_env(path):
-            dotenv.load_dotenv(path, '.env')
+            dotenv.load_dotenv(dotenv_path=path)
             self.logger.debug(".env file loaded")
             return True
         self.logger.critical(".env file not found")
