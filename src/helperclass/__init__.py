@@ -1,1 +1,1 @@
-from main import Helper
+from .main import Helper
