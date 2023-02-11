@@ -62,10 +62,11 @@ class Helper:
     async def load_env(self, path) -> bool:
         """
         Load the .env file.
+        :param path: path where exist .env
         :return: True if the .env file is loaded, False otherwise
         """
         if await check_if_existed_env(path):
-            dotenv.load_dotenv(path, '.env'))
+            dotenv.load_dotenv(path, '.env')
             self.logger.debug(".env file loaded")
             return True
         self.logger.critical(".env file not found")
