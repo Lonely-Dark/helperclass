@@ -1,5 +1,5 @@
 [build-system]
-requires = ["hatchling", "coloredlogs", "uvloop", "asyncio", "python-dotenv"]
+requires = ["hatchling", "coloredlogs", "asyncio", "python-dotenv"]
 build-backend = "hatchling.build"
 
 [project]
