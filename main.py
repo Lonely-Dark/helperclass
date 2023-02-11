@@ -9,7 +9,6 @@ import os.path
 
 import coloredlogs
 import dotenv
-import uvloop
 
 
 async def check_if_existed_env() -> bool:
@@ -30,7 +29,6 @@ class Helper:
         :param filename: filename of the log file
         """
 
-        uvloop.install()
         self.log_format: str = '[%(asctime)s] [%(filename)s] [%(levelname)s] [%(' \
                                'lineno)d]: %(' \
                                'message)s '
