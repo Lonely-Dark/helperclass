@@ -1,1 +1,1 @@
-from helperclass import Helper
+from main import Helper
