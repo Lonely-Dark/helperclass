@@ -16,7 +16,7 @@ async def check_if_existed_env(path) -> bool:
     Check if .env file exists.
     :return: True if .env file exists, False if not.
     """
-    return os.path.exists(path, '.env')
+    return os.path.isfile(os.join(path, '.env'))
 
 
 class Helper:
