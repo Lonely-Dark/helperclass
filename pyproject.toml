@@ -1,21 +1,16 @@
+[tool.poetry]
+name = "helperclass-pack"
+version = "0.1.0"
+description = ""
+authors = ["Lonely-Dark <vlad10game@gmail.com>"]
+readme = "README.md"
+packages = [{include = "helperclass_pack"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+coloredlogs = "^15.0.1"
+
+
 [build-system]
-requires = ["hatchling", "coloredlogs", "asyncio", "python-dotenv"]
-build-backend = "hatchling.build"
-
-[project]
-name = "helperclass"
-version = "0.0.1"
-authors = [
-  { name="Lonely-Dark", email="vlad10game@gmail.com" },
-]
-description = "A package for my local projects"
-requires-python = ">=3.10"
-classifiers = [
-    "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
-    "Operating System :: OS Independent",
-]
-
-[project.urls]
-"Homepage" = "https://github.com/Lonely-Dark/helperclass"
-"Bug Tracker" = "https://github.com/Lonely-Dark/helperclass/issues"
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
