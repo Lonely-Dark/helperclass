@@ -1,2 +1,5 @@
-Pipfile.lock
+# Ignore poetry lock
+poetry.lock
+
+# Ignore IDEA
 .idea

@@ -8,31 +8,23 @@ import logging
 import os.path
 
 import coloredlogs
-import dotenv
-
-
-async def check_if_existed_env(path) -> bool:
-    """
-    Check if .env file exists.
-    :return: True if .env file exists, False if not.
-    """
-    return os.path.isfile(os.path.join(path, '.env'))
 
 
 class Helper:
 
-    def __init__(self, name: str = __name__, streams: int = 1, filename: str = "log.log") -> None:
+    def __init__(self, name: str = __name__, streams: int = 1, filename: str = "log.log", log_level: int = 10) -> None:
         """
         Helper class for logging and .env file. For me and my projects.
         :param name: name of the logger
         :param streams: 1,2,3; 1 - StreamHandler, 2 - FileHandler, 3 - All Handlers
         :param filename: filename of the log file
+        :param log_level: DEBUG, INFO, WARNING, ERROR, CRITICAL (10, 20, 30, 40, 50)
         """
 
         self.log_format: str = '[%(asctime)s] [%(filename)s] [%(levelname)s] [%(' \
                                'lineno)d]: %(' \
                                'message)s '
-        self.log_level = logging.DEBUG
+        self.log_level = log_level
         formatter_colored: coloredlogs.ColoredFormatter = coloredlogs.ColoredFormatter(self.log_format)
         self.logger: logging.Logger = logging.getLogger(name)
 
@@ -58,16 +50,3 @@ class Helper:
                 handler_file.setFormatter(formatter_colored)
                 self.logger.addHandler(handler_stream)
                 self.logger.addHandler(handler_file)
-
-    async def load_env(self, path) -> bool:
-        """
-        Load the .env file.
-        :param path: path where exist .env
-        :return: True if the .env file is loaded, False otherwise
-        """
-        if await check_if_existed_env(path):
-            dotenv.load_dotenv(dotenv_path=path)
-            self.logger.debug(".env file loaded")
-            return True
-        self.logger.critical(".env file not found")
-        return False
