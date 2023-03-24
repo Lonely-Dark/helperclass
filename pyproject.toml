@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "helperclass-pack"
-version = "0.1.0"
-description = ""
+version = "0.1.1"
+description = "Helperclass-pack is a Python library developed by Lonely-Dark to facilitate logging in their projects. It provides a Helper class that can be used to easily configure logging settings and log messages to various output streams."
 authors = ["Lonely-Dark <vlad10game@gmail.com>"]
 readme = "README.md"
 packages = [{include = "helperclass_pack"}]
