@@ -12,7 +12,8 @@ import coloredlogs
 
 class Helper:
 
-    def __init__(self, name: str = __name__, streams: int = 1, filename: str = "log.log", log_level: int = 10) -> None:
+    def __init__(self, name: str = __name__, streams: int = 1, filename: str = "log.log",
+                 log_level: str = "DEBUG") -> None:
         """
         Helper class for logging and .env file. For me and my projects.
         :param name: name of the logger
